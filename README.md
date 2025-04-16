@@ -4,8 +4,6 @@ This project creates an automated data pipeline for extracting, transforming, an
 
 ## Architecture Overview
 
-![Architecture Diagram](https://via.placeholder.com/800x400?text=Redfin+Data+Pipeline+Architecture)
-
 The pipeline follows these steps:
 1. **Extract**: Pull data from Redfin's public S3 bucket
 2. **Transform**: Clean, filter, and enrich the data
