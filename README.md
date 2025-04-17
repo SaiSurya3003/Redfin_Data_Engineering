@@ -72,7 +72,7 @@ airflow standalone
 
 1. Log in to your Snowflake account
 2. Run the SQL commands in `RealEstate_script.txt` to create:
-   - Database: `redfin_database_1`
+   - Database: `redfin_database`
    - Schema: `redfin_schema`
    - Table: `redfin_table`
    - File format: `format_csv`
@@ -81,7 +81,7 @@ airflow standalone
 
 3. Note: Replace AWS credentials in the script with your own:
 ```sql
-CREATE OR REPLACE STAGE redfin_database_1.external_stage_schema.redfin_ext_stage_yml 
+CREATE OR REPLACE STAGE redfin_database.external_stage_schema.redfin_ext_stage_yml 
     url="s3://redfin-transform-zone-yml/"
     credentials=(aws_key_id='YOUR AWS KEY ID'
     aws_secret_key='YOUR AWS SECRET KEY')
@@ -184,7 +184,7 @@ conn = snowflake.connector.connect(
     password='YOUR_PASSWORD',
     account='YOUR_ACCOUNT',
     warehouse='redfin_warehouse',
-    database='redfin_database_1',
+    database='redfin_database',
     schema='redfin_schema'
 )
 
@@ -254,7 +254,7 @@ After successfully loading data into Snowflake and S3, you can create visualizat
 2. **Configure Connection**:
    - Server: your Snowflake account URL (e.g., `organization-account.snowflakecomputing.com`)
    - Warehouse: `redfin_warehouse`
-   - Database: `redfin_database_1`
+   - Database: `redfin_database`
    - Schema: `redfin_schema`
    - Authentication: Username/Password or OAuth
 
@@ -304,7 +304,7 @@ After successfully loading data into Snowflake and S3, you can create visualizat
    - Server: your Snowflake server address
    - Username and Password
    - Warehouse: `redfin_warehouse`
-   - Database: `redfin_database_1`
+   - Database: `redfin_database`
    - Schema: `redfin_schema`
 
 3. **Import Data**:
